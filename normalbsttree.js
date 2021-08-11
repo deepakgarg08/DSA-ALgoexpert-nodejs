@@ -1,3 +1,5 @@
+const util = require("util");
+
 class Node {
   constructor(data) {
     this.data = data;
@@ -55,7 +57,9 @@ class BinarySearchTreeClass {
   }
 
   removeNode(node, data) {
-    if (node.data < data) {
+    console.log("node", node);
+    if (node === null) return null;
+    else if (node.data < data) {
       //go to right
       node.right = this.removeNode(node.right, data);
       return node;
@@ -73,19 +77,49 @@ class BinarySearchTreeClass {
       } else if (node.left === null) {
         node = node.right;
         return node;
-      } else {
+      } else if (node.right === null) {
         node = node.left;
         return node;
       }
+      // Deleting node with two children
+      // minumum node of the rigt subtree
+      // is stored in aux
+      var aux = this.findMinNode(node.right);
+      node.data = aux.data;
+
+      node.right = this.removeNode(node.right, aux.data);
+      return node;
     }
+  }
+  findMinNode(node) {
+    // if left of a node is null
+    // then it must be minimum node
+    if (node.left === null) return node;
+    else return this.findMinNode(node.left);
   }
 }
 
 let BST = new BinarySearchTreeClass();
-BST.insert(50);
-BST.insert(40)
-BST.insert(30)
-BST.insert(120)
+// BST.insert(50);
+// BST.insert(40)
+// BST.insert(30)
+// BST.insert(120)
 // BST.insert(10)
 // BST.insert(50)
-console.log("BST", BST);
+
+BST.insert(15);
+BST.insert(25);
+BST.insert(10);
+BST.insert(7);
+BST.insert(22);
+BST.insert(17);
+BST.insert(13);
+BST.insert(5);
+BST.insert(9);
+BST.insert(27);
+BST.remove(27);
+BST.remove(5);
+BST.remove(10);
+BST.remove(10);
+// console.log("BST", BST);
+console.log(util.inspect(BST, { showHidden: false, depth: null }));
