@@ -107,19 +107,19 @@ let BST = new BinarySearchTreeClass();
 // BST.insert(10)
 // BST.insert(50)
 
-BST.insert(15);
-BST.insert(25);
 BST.insert(10);
-BST.insert(7);
-BST.insert(22);
-BST.insert(17);
-BST.insert(13);
 BST.insert(5);
-BST.insert(9);
-BST.insert(27);
-BST.remove(27);
-BST.remove(5);
-BST.remove(10);
-BST.remove(10);
+BST.insert(15);
+BST.insert(2);
+BST.insert(5);
+BST.insert(13);
+BST.insert(22);
+BST.insert(1);
+BST.insert(14);
+// BST.insert(27);
+// BST.remove(27);
+// BST.remove(5);
+// BST.remove(10);
+// BST.remove(10);
 // console.log("BST", BST);
-console.log(util.inspect(BST, { showHidden: false, depth: null }));
+console.log(util.inspect(BST.root, { showHidden: false, depth: null }));
