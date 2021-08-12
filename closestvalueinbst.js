@@ -1,3 +1,5 @@
+// https://github.com/deepakgarg08/algoexpert-data-structures-algorithms/blob/master/Questions/find-closest-value-in-BST.PNG
+
 const util = require("util");
 
 class Node {
@@ -126,8 +128,6 @@ function bstMinimum(tree, targetvalue) {
   let result = Infinity;
   let targetnumber = tree.data;
   while (tree) {
-    // console.log('tree', tree)
-
     let check = Math.abs(tree.data - targetvalue);
     //go to right of tree
     if (targetvalue > tree.data) {

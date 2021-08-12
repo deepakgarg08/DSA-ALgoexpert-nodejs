@@ -1,3 +1,6 @@
+// o(n)
+
+
 var currencies = [1, 3, 2, 8];
 // var currencies = [1, 2,  3, 7 , 11, 27, 60];
 var currencies = [5,7,1,1,2,3,22];
