@@ -30,16 +30,7 @@ class BinarySearchTreeClass {
     }
   }
 
-  //deletion
-
-  remove(data) {
-    if (this.root === null) {
-      //tree is empty
-      return null;
-    } else {
-      this.removeNode(this.root, data);
-    }
-  }
+ 
 
   insertNode(node, newNode) {
     if (node.data > newNode.data) {
@@ -53,6 +44,17 @@ class BinarySearchTreeClass {
       if (node.right === null) {
         node.right = newNode;
       } else this.insertNode(node.right, newNode);
+    }
+  }
+
+   //deletion
+
+   remove(data) {
+    if (this.root === null) {
+      //tree is empty
+      return null;
+    } else {
+      this.removeNode(this.root, data);
     }
   }
 
