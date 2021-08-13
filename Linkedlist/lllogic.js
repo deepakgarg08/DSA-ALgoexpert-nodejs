@@ -84,49 +84,34 @@ class LinkedList {
     //if only one node
     else if (this.head.next === null) {
       console.log(".............");
-      this.size--;
       this.head = null;
+      this.size--;
     } else {
-      console.log("............2.");
-
       let current = this.head;
-
+      let previous = null;
       while (current !== null) {
-        let previous = current;
+        console.log('current', current.value)
 
         if (current.value === value) {
-          previous = current.next;
+          if(previous === null){
+            this.head = current.next
+          }else{
+
+            previous.next = current.next;
+          }
+          console.log('inside if');
+          this.size--
+          return this.head
         }
+        previous = current
         current = current.next;
       }
       return this.head;
 
-      // let node = this.deleteNode(previous, current, value);
-      // console.log("node", node);
-      // return node;
+  
     }
   }
 
-  deleteNode(previous, current, value) {
-    console.log("previous", previous);
-    if (previous === null) {
-      return console.log("nothing to delete");
-    }
-    //setting header to null
-    if (this.size === 1) {
-      console.log("...fired");
-      previous = null;
-    }
-
-    // if (previous.value === value) {
-    //   previous.current = null;
-    //   return this.head;
-    // } else {
-    //   this.deleteNode(current.next, value);
-    // }
-
-    return this.head;
-  }
   //traverse
 }
 
