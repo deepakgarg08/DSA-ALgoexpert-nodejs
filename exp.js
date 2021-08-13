@@ -1,5 +1,17 @@
-let [x,y] = [4,5]
-console.log('x', x)
-console.log('y', y)
- [y,x] = [x,y]
-console.log('y', y)
+
+let a = { a:1 , b:3}
+let b  =  a
+console.log('b', b)
+b.c = 5
+console.log('b', b)
+console.log('a', a)
+
+
+
+
+
+
+
+
+
+
