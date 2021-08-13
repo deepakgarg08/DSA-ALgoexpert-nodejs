@@ -22,14 +22,12 @@ class LinkedList {
 
   //insert at given index
 
-  insert(value, index = 0, end = false) {
-    if (index < 0 || index > this.size)
-      return console.log("Please enter a valid index.");
-
+  insert(value, index) {
     let newNode = new Node(value);
-
+    let isIndexPresent = index >= 0 ? true : false;
     //insert in the end/tail
-    if (end === true) {
+    // index = 5
+    if (!isIndexPresent) {
       if (this.head === null) {
         this.head = newNode;
       } else {
@@ -39,8 +37,7 @@ class LinkedList {
       return this.head;
     }
     //insertion at head
-    if (this.head === null) {
-      console.log("head");
+    else if (this.head === null) {
       newNode.next = this.head;
       this.head = newNode;
       this.size++;
@@ -49,18 +46,26 @@ class LinkedList {
     }
 
     //insertion according to any index
+
+    console.log("index", index);
+    if (index < 0 || index > this.size)
+      return console.log("Please enter a valid index.");
     let i = 0;
     let previous = this.head;
     let current = this.head;
-
     while (i < index) {
       i++;
       previous = current;
       current = current.next;
     }
 
-    newNode.next = current;
-    previous.next = newNode;
+    if (i === 0) {
+      newNode.next = current;
+      this.head = newNode;
+    } else {
+      newNode.next = current;
+      previous.next = newNode;
+    }
 
     this.size++;
     return this.head;
@@ -73,22 +78,32 @@ class LinkedList {
 
     //nothing to delete
     if (this.head === null) {
-      console.log('nothing to delete')
+      console.log("nothing to delete");
       return null;
     }
     //if only one node
     else if (this.head.next === null) {
-      
-      console.log('.............')
-      this.size--
-      this.head = null
-    }
-    else {
+      console.log(".............");
+      this.size--;
+      this.head = null;
+    } else {
+      console.log("............2.");
+
       let current = this.head;
-      let previous = current;
-      let node = this.deleteNode(previous, current, value);
-      console.log("node", node);
-      return node;
+
+      while (current !== null) {
+        let previous = current;
+
+        if (current.value === value) {
+          previous = current.next;
+        }
+        current = current.next;
+      }
+      return this.head;
+
+      // let node = this.deleteNode(previous, current, value);
+      // console.log("node", node);
+      // return node;
     }
   }
 
