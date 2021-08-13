@@ -74,8 +74,6 @@ class LinkedList {
   //deletion
 
   delete(value) {
-    console.log("value", value);
-
     //nothing to delete
     if (this.head === null) {
       console.log("nothing to delete");
@@ -83,36 +81,43 @@ class LinkedList {
     }
     //if only one node
     else if (this.head.next === null) {
-      console.log(".............");
       this.head = null;
       this.size--;
     } else {
       let current = this.head;
       let previous = null;
+      let flag = 0;
       while (current !== null) {
-        console.log('current', current.value)
-
         if (current.value === value) {
-          if(previous === null){
-            this.head = current.next
-          }else{
-
+          if (previous === null) {
+            this.head = current.next;
+          } else {
             previous.next = current.next;
           }
-          console.log('inside if');
-          this.size--
-          return this.head
+          this.size--;
+          flag++;
         }
-        previous = current
+        previous = current;
         current = current.next;
       }
-      return this.head;
-
-  
+      if (flag ===0 ) return console.log("value not found")
     }
   }
 
-  //traverse
-}
+  //traverse or find an elemenet in link list
+
+  traverse(value) {
+    let current = this.head;
+      let count = 0;
+      while (current !== null) {
+        if (current.value === value) {
+          return console.log("index of element "+ value + " :",count)
+        }
+        count++;
+        current = current.next;
+      }
+      return -1
+    }
+  }
 
 module.exports = LinkedList;
