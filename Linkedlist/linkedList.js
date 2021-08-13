@@ -8,7 +8,7 @@ ll.insert(10);
 ll.insert(20);
 ll.insert(30);
 ll.insert(40);
-ll.insert(50);
+// ll.insert(50);
 
 // ll.insert( -2222 , 0 );
 // ll.insert( -1111 , 3);
@@ -18,7 +18,11 @@ ll.insert(50);
 // ll.delete(20)
 // ll.delete(50)
 
-ll.traverse(50)
+// ll.traverse(50)
+
+// ll.isEmpty()
 
 // console.log("ll", ll);
-console.log(util.inspect(ll, { showHidden: false, depth: null }));
+
+console.log(util.inspect(ll.printList() , { showHidden: false, depth: null }));
+console.log(util.inspect(ll.isEmpty(), { showHidden: false, depth: null }));

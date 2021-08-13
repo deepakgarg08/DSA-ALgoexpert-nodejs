@@ -100,24 +100,61 @@ class LinkedList {
         previous = current;
         current = current.next;
       }
-      if (flag ===0 ) return console.log("value not found")
+      if (flag === 0) return console.log("value not found");
     }
   }
-
   //traverse or find an elemenet in link list
 
   traverse(value) {
     let current = this.head;
-      let count = 0;
-      while (current !== null) {
-        if (current.value === value) {
-          return console.log("index of element "+ value + " :",count)
-        }
-        count++;
-        current = current.next;
+    let count = 0;
+    while (current !== null) {
+      if (current.value === value) {
+        return console.log("index of element " + value + " :", count);
       }
-      return -1
+      count++;
+      current = current.next;
     }
+    return console.log("value not found");
   }
 
+  isEmpty() {
+    return console.log("list empty check:: ", this.size === 0);
+  }
+  // gives the size of the list
+  size_of_list() {
+    console.log(this.size);
+  }
+
+  // prints the list items
+  printList() {
+    let result = []
+     while(this.head != null){
+      result.push(this.head.value)
+      this.head = this.head.next
+    }
+    console.log('result', result)
+  }
+
+
+
+}
+
 module.exports = LinkedList;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
