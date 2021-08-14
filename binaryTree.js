@@ -24,14 +24,11 @@ class BinaryTree {
     this.root = null;
   }
 
-  insert(data){
-
-     new Node(data)
+  insert(data) {
+    new Node(data);
   }
 
-
   inorder(node) {
-      
     if (!node) {
       return; //console.log('node is empty')
     }
@@ -69,16 +66,15 @@ BT.root.right = new Node(3);
 BT.root.left.left = new Node(4);
 BT.root.left.right = new Node(5);
 
-console.log('...................')
+console.log("...................");
 
-BT.inorder(BT.root)
-console.log('...................')
-BT.preorder(BT.root)
-console.log('...................')
+BT.inorder(BT.root);
+console.log("...................");
+BT.preorder(BT.root);
+console.log("...................");
 
 BT.postorder(BT.root);
-console.log('...................')
-
+console.log("...................");
 
 // console.log("BT", BT);
 console.log(util.inspect(BT, { showHidden: false, depth: null }));
