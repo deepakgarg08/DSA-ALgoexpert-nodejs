@@ -37,7 +37,7 @@ class LinkedList {
       return this.head;
     }
     //insertion at head
-    else if (this.head === null) {
+    else if (this.head === null || index === 0) {
       newNode.next = this.head;
       this.head = newNode;
       this.size++;

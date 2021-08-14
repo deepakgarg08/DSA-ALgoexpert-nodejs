@@ -1,5 +1,6 @@
 class Node {
   constructor(value) {
+    this.prev = null
     this.value = value;
     this.next = null;
   }
@@ -14,6 +15,8 @@ class DoubleLinkedList {
   insertNode(node, newNode) {
     //   console.log('node', node)
     if (node.next === null) {
+      // console.log('...node.next', node)
+      newNode.prev = node
       node.next = newNode;
     } else {
       this.insertNode(node.next, newNode);
@@ -37,9 +40,11 @@ class DoubleLinkedList {
       return this.head;
     }
     //insertion at head
-    else if (this.head === null) {
+    else if (this.head === null || index === 0) {
+
       newNode.next = this.head;
       this.head = newNode;
+      newNode.prev = null
       this.size++;
 
       return newNode;
@@ -62,9 +67,13 @@ class DoubleLinkedList {
     if (i === 0) {
       newNode.next = current;
       this.head = newNode;
+      newNode.prev = null
+      
     } else {
       newNode.next = current;
+      newNode.prev = previous
       previous.next = newNode;
+
     }
 
     this.size++;
