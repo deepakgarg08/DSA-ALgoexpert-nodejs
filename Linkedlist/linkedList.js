@@ -22,7 +22,6 @@ ll.insert(40);
 
 // ll.isEmpty()
 
-// console.log("ll", ll);
-
-console.log(util.inspect(ll.printList() , { showHidden: false, depth: null }));
-console.log(util.inspect(ll.isEmpty(), { showHidden: false, depth: null }));
+console.log(util.inspect(ll , { showHidden: false, depth: null }));
+ll.printList()
+ll.isEmpty()
