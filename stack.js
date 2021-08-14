@@ -26,12 +26,12 @@ class Stack {
 
   //returns top most element but don't delete
 
-  peek(){
+  peek() {
     if (!this.isEmpty()) {
-        return this.items[this.items.length -1];
-      } else {
-        return console.log("stack is empty");
-      } 
+      return this.items[this.items.length - 1];
+    } else {
+      return console.log("stack is empty");
+    }
   }
 
   noOFElements() {
@@ -42,14 +42,12 @@ class Stack {
     return this.size === 0;
   }
   //This method returns a string in which all the element of an stack is concatenated.
-  printStack(){
-
-    let str = ''
-    for (let e of this.items){
-        str += e + " "
+  printStack() {
+    let str = "";
+    for (let e of this.items) {
+      str += e + " ";
     }
-    return str
-
+    return str;
   }
 }
 
@@ -61,22 +59,7 @@ stack.push(2);
 console.log("stack", stack);
 stack.pop();
 console.log("stack", stack);
-console.log('stack.peek()', stack.peek())
+console.log("stack.peek()", stack.peek());
 console.log("isEmpty", stack.isEmpty());
 console.log("stack.noOFElements()", stack.noOFElements());
-console.log('printstack():: ',stack.printStack());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log("printstack():: ", stack.printStack());
