@@ -16,26 +16,25 @@ class GraphTraversalBFS {
   BFSUtil(v, visited) {
     let queue = [];
     queue.push(v);
-    let s = queue.shift();
-    console.log('queue', queue.length)
+    // console.log("queue", queue);
 
-    visited[v] = true;
     //result
 
-    // while (queue) {
-    //   let s = queue.shift();
+    while (queue.length > 0) {
+      visited[v] = true;
+      let s = queue.shift();
+      const destinations = this.adj[s];
 
-    //   console.log(s + "-");
+      console.log(s);
 
-    //   // for (let i of this.adj[v].values()) {
-    //   //   let n = i;
-
-    //   //   //if visted node to be true
-    //   //   if (!visited[n]) {
-    //   //     this.BFSUtil(n, visited);
-    //   //   }
-    //   // }
-    // }
+      for (let i of destinations) {
+        //if visted node to be true
+        if (!visited[i]) {
+          visited[i] = true;
+          queue.push(i);
+        }
+      }
+    }
   }
 
   BFS(v) {

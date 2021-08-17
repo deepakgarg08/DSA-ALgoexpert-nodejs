@@ -19,14 +19,12 @@ class GraphTraversalDFS {
   DFSUtil(v, visited) {
     visited[v] = true;
     //result
-    console.log( v + "");
+    console.log(v + "");
 
     for (let i of this.adj[v].values()) {
-      let n = i;
-
       //if visted node to be true
-      if (!visited[n]) {
-        this.DFSUtil(n, visited);
+      if (!visited[i]) {
+        this.DFSUtil(i, visited);
       }
     }
   }
@@ -34,7 +32,9 @@ class GraphTraversalDFS {
   DFS(v) {
     let visited = new Array(this.V);
 
-    for (let i = 0; i < visited.length; i++) visited[i] = false;
+    for (let i = 0; i < visited.length; i++) {
+      visited[i] = false;
+    }
 
     //call the recursive helper to print DFS Traversal
     this.DFSUtil(v, visited);
