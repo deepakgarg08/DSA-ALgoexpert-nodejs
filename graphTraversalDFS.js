@@ -4,7 +4,7 @@
 //if yes, then print that node and repeat
 //if reaches null, then go back to previous node and see previous selected node has more edge
 
-class GraphTraversal {
+class GraphTraversalDFS {
   constructor(v) {
     this.V = v;
     this.adj = new Array(v);
@@ -18,8 +18,8 @@ class GraphTraversal {
 
   DFSUtil(v, visited) {
     visited[v] = true;
+    //result
     console.log( v + "");
-
 
     for (let i of this.adj[v].values()) {
       let n = i;
@@ -35,14 +35,13 @@ class GraphTraversal {
     let visited = new Array(this.V);
 
     for (let i = 0; i < visited.length; i++) visited[i] = false;
-    // console.log("visited", visited);
 
     //call the recursive helper to print DFS Traversal
     this.DFSUtil(v, visited);
   }
 }
 
-let g = new GraphTraversal(4);
+let g = new GraphTraversalDFS(4);
 g.addEdge(0, 1);
 g.addEdge(0, 2);
 g.addEdge(1, 2);
