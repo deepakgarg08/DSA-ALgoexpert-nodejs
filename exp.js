@@ -12,7 +12,6 @@ class Graph1 {
   }
 }
 
-//     Proxy
 
 let g = new Graph1(4);
 g.addEdge(0, 1);
