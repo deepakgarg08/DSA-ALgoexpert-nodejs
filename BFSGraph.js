@@ -1,3 +1,6 @@
+// const adjList = require("./adjacencymatrixNonNumbers");
+// console.log('adjList', adjList.get(airport))
+
 const airports = "PHX BKK OKC JFK LAX MEX EZE HEL LOS LAP LIM";
 
 const routes = [
@@ -36,6 +39,26 @@ arrAirports.forEach(addNode);
 routes.forEach((route) => {
   addEdge(...route);
 });
-// console.log('adjList 2', adjList)
 
-module.export = adjList;
+//BFS
+
+function BFS(start) {
+  const visited = new Set();
+  const queue = [start];
+  
+  while (queue.length > 0) {
+      const airport = queue.shift();
+      const destinations = adjList.get(airport);
+      
+    for (const destination of destinations) {
+      if(!visited.has(destination)){
+          visited.add(destination)
+          queue.push(destination)
+      }
+
+    }
+  }
+  return visited
+}
+
+console.log("BFS::",BFS("HEL"));
