@@ -1,8 +1,13 @@
 // O(nlogn)
 //method 1
+//https://github.com/deepakgarg08/algoexpert-data-structures-algorithms/blob/master/Questions/two-number-sum.PNG
+
 let array = [3, 5, -4, 8, 11, 1, -1, 6];
 
 let sum = (array, target) => {
+
+  if (array.length <3) return array
+
   array.sort((a, b) => a - b);
   let counter = 1,
     l = array[0],
@@ -33,6 +38,9 @@ console.log(".............................\n");
 let array2 = [3, 5, -4, 8, 11, 1, -1, 6];
 
 let sum2 = (array2, target) => {
+
+  if (array2.length <3) return array2
+
   let existingNumbers = {};
 
   for (let i = 0; i < array2.length; i++) {
@@ -46,7 +54,7 @@ let sum2 = (array2, target) => {
   // console.log('existingNumbers', existingNumbers)
   return array2;
 };
-console.log("sum2", sum2(array, 5));
+console.log("sum2", sum2([3,2], 5));
 console.log("sum2", sum2(array, 19));
 console.log("sum2", sum2(array, 9));
 console.log("sum2", sum2(array, -5));
