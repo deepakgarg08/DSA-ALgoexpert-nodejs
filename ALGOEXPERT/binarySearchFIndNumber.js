@@ -3,8 +3,8 @@
 let array = [0, 1, 21, 33, 45,  61, 71, 72, 74];
 let target = 33;
 let middle = 0;
+//if we can change original array than , we don't need newArray
 let newArray = [];
-let result;
 function binarySearchFindNumber(array, target) {
   middle = parseInt(array.length / 2);
   let middleNumber1 = array[middle];
@@ -20,14 +20,17 @@ function binarySearchFindNumber(array, target) {
   }
   if (target > middleNumber1) {
     //consider values right to middlenumber
-    newArray = array.splice(middle, array.length);
-    result = binarySearchFindNumber(newArray, target);
-    return result;
+    // newArray = array.splice(middle, array.length);
+    // result = binarySearchFindNumber(newArray, target);
+
+    array = array.splice(middle, array.length);
+    return binarySearchFindNumber(array, target);
   } else {
     //consider values left to middlenumber
-    newArray = array.splice(0, middle);
-    result = binarySearchFindNumber(newArray, target);
-    return result;
+    // newArray = array.splice(0, middle);
+    // result = binarySearchFindNumber(newArray, target);
+    array = array.splice(0, middle);
+    return  binarySearchFindNumber(array, target);
   }
 }
 
