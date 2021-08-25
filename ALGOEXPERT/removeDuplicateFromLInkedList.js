@@ -17,14 +17,15 @@ const removeDuplicateFromLinkedList = (ll) => {
     // console.log('ll', ll.value)
 
     let valuesStored = {}
-
     let ourll = ll
+    ll =ll.head
 
     while(ll){
         valuesStored[ll.value] = ll.value
         // console.log("check ll.value", ll.next.value);
         if(ll.next.value in valuesStored){
             ll.next = ll.next.next
+            ourll.size--
             return ourll
         }
         ll = ll.next
@@ -33,7 +34,7 @@ const removeDuplicateFromLinkedList = (ll) => {
     
 }
 
-let fr = removeDuplicateFromLinkedList(ll.head)
+let fr = removeDuplicateFromLinkedList(ll)
 // console.log('removeDuplicateFromLinkedList', removeDuplicateFromLinkedList(ll.head))
 console.log(util.inspect(fr , { showHidden: false, depth: null }));
 
