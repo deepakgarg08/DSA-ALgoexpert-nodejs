@@ -65,6 +65,7 @@ BT.root.left = new Node(2);
 BT.root.right = new Node(3);
 BT.root.left.left = new Node(4);
 BT.root.left.right = new Node(5);
+console.log('BT', BT)
 
 console.log("...................");
 

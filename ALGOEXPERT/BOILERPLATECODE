@@ -1,0 +1,13 @@
+
+let array = []
+
+function abcdef(array){
+
+
+
+}
+
+console.log("abcdef:: ",abcdef(array))
+
+
+
