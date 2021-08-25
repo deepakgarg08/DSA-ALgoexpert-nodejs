@@ -1,4 +1,4 @@
-
+//https://github.com/deepakgarg08/algoexpert-data-structures-algorithms/blob/master/Questions/remove-duplicates-from-linked-list.PNG
 // 1 2 3 4 4 5
 const LinkedList = require('../FUNDAMENTALS/Linkedlist/lllogic');
 const util = require("util");
