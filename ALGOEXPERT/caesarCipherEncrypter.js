@@ -1,3 +1,5 @@
+// O(n) time and space
+
 let string = "xyz";
 let key = 2;
 function caesarCipherEncrypter(string, key) {
@@ -5,11 +7,16 @@ function caesarCipherEncrypter(string, key) {
 
   for (let i = 0; i < string.length; i++) {
     let tempstring = "";
-    tempstring = Number(string.charCodeAt(i));
-    tempstring += key
+
+    if(key>26){
+        key = key % 26
+        console.log('key', key)
+    }
+    tempstring = Number(string.charCodeAt(i)) + key;
+
     if (tempstring > 122) {
-      let diff = tempstring - 122;
-      let ascii = 96 + diff;
+      let diff = tempstring - 122; //122 is z ascii value
+      let ascii = 96 + diff; //from 97 a starts
       tempstring = String.fromCharCode(ascii);
       newstring += tempstring
     }else{
