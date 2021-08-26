@@ -14,7 +14,7 @@ function isPalindrome(string) {
     }
     l++;
   }
-  return length === middle ? true : false;
+  return length === middle 
 }
 
 console.log("isPalindrome:: ", isPalindrome(string));
