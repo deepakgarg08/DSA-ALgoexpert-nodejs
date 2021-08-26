@@ -1,10 +1,8 @@
 //O(n) space and time
 
 let generateDocument = () => {
-  
-  
-  var string = "the quick brown fox jump over thei lazy dog"; 
-  var document = "pack my box with five dozen jug"; 
+  var string = "the quick brown fox jump over thei lazy dog";
+  var document = "pack my box with five dozen jug";
 
   var string = "thequickbrownfoxjumpoverthelazydogi";
   var document = "packmyboxwithfivedozenjug";
