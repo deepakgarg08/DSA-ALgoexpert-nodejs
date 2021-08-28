@@ -1,10 +1,10 @@
 // https://github.com/deepakgarg08/algoexpert-data-structures-algorithms/blob/master/Questions/smallest-difference.PNG
 //O(nlogn + mlogm) O(n)
-var array1 = [-1, 5, 10, 20, 30, 3];
-var array2 = [26, 5, 27, 15, 19];
+// var array1 = [-1, 5, 10, 20, 30, 3];
+// var array2 = [26, 5, 27, 15, 19];
 
-// var array1 = [-1, 5, 10, 20, 28, 3];
-// var array2 = [26, 134, 135, 15, 17];
+var array1 = [-1, 5, 10, 20, 28, 3];
+var array2 = [26, 134, 135, 15, 17];
 function smallestDifference(a1, a2) {
   let a1l1, a2l1;
   let min = Infinity;
