@@ -1,7 +1,9 @@
-// O(n*n) O(n) 
+// O(n*n) O(n)
+
+//https://github.com/deepakgarg08/algoexpert-data-structures-algorithms/blob/master/Questions/three-number-sum.PNG
 var array = [12, 3, 1, 2, -6, 5, -8, 6];
 var target = 0;
-function threeNumbersSum2(array,target) {
+function threeNumbersSum2(array, target) {
   array.sort((a, b) => a - b);
   let triplets = [];
   for (let i = 0; i < array.length - 2; i++) {
@@ -22,10 +24,7 @@ function threeNumbersSum2(array,target) {
   }
   return triplets;
 }
-console.log("threeNumbersSum2:: ", threeNumbersSum2(array,target));
-
-
-
+console.log("threeNumbersSum2:: ", threeNumbersSum2(array, target));
 
 // method 2 tried but not working efficiently
 
@@ -64,8 +63,7 @@ function threeNumbersSum(array) {
     }
   }
 
-
-  return resultArray
+  return resultArray;
 }
 
 console.log("threeNumbersSum: getting duplicates: ", threeNumbersSum(array));
