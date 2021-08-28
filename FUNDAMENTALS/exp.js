@@ -1,15 +1,10 @@
-const obj = {a:1, b:5}
-console.log('obj', obj)
-obj.a +=1
-console.log('obj2', obj)
+let arr = [];
 
+console.log("arr", [-18, 12, 6] == [-18, 12, 6]);
 
-
-
-
-
-
-
-
-
-
+for (let i = 0; i<arr.length; i++){
+    for (let j = 0; j < array.length; j++) {
+        const element = array[j];
+        
+    }
+}
