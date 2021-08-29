@@ -1,5 +1,7 @@
 //O(n2) run time and O(n) space
 
+// /https://github.com/deepakgarg08/algoexpert-data-structures-algorithms/blob/master/Questions/array-of-products.PNG
+
 let array = [5, 1, 4, 2];
 //method 1
 function arrayOfProducts(array) {
@@ -59,15 +61,12 @@ function logic3(array, result) {
     leftProduct.push(leftRunningProducts);
     leftRunningProducts *= array[j - 1];
   }
-  //rogjt
+  //right and result
 
   for (let j = array.length - 1; j >= 0; j--) {
     rightProduct[j] = rightRunningProducts;
     rightRunningProducts *= array[j];
-  }
-
-  for (let i = 0; i < array.length; i++) {
-    result.push(leftProduct[i] * rightProduct[i]);
+    result.push(leftProduct[j] * rightProduct[j]);
   }
 
   return result;
