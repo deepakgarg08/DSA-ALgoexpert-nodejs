@@ -24,10 +24,6 @@ console.log("arrayOfProducts:: ", arrayOfProducts(array));
 
 function arrayOfProducts2(array) {
   let result = [];
-  return logic2(array, result);
-}
-
-function logic2(array, result) {
   let product = 1;
 
   // for (let i = 0; i < array.length; i++) {
@@ -47,10 +43,7 @@ console.log("arrayOfProducts2:: ", arrayOfProducts2(array));
 
 function arrayOfProducts3(array) {
   let result = [];
-  return logic3(array, result);
-}
 
-function logic3(array, result) {
   let leftRunningProducts = 1;
   let rightRunningProducts = 1;
   let leftProduct = [];
