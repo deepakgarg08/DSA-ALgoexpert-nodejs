@@ -15,6 +15,7 @@ function dijkstra(graph, src) {
   dist[src] = 0;
   for (let count = 0; count < V - 1; count++) {
     let u = minDistance(dist, sptSet);
+    console.log('u', u)
     sptSet[u] = true;
 
     for (let v = 0; v < V; v++) {
@@ -23,8 +24,12 @@ function dijkstra(graph, src) {
         graph[u][v] != 0 &&
         dist[u] != Number.MAX_VALUE &&
         dist[u] + graph[u][v] < dist[v]
-      ) {
+    
+        ) {
+          console.log('[v]', v)
+          console.log('dist[u],vertex', dist[u],u)
         dist[v] = dist[u] + graph[u][v];
+        console.log('dist[v]', dist[v])
       }
     }
   }
@@ -32,13 +37,19 @@ function dijkstra(graph, src) {
 }
 
 function minDistance(dist, sptSet) {
+  console.log('sptSet', sptSet)
+  // console.log('dist', dist)
   let min = Number.MAX_VALUE;
   let min_index = -1;
-
+  console.log('..................');
   for (let v = 0; v < V; v++) {
     if (sptSet[v] == false && dist[v] < min) {
+      console.log('sptSet[v],v', sptSet[v],v)
+      console.log('dist[v]', dist[v])
       min = dist[v];
+      console.log('min', min)
       min_index = v;
+      console.log('min_index', min_index)
     }
   }
   return min_index;
