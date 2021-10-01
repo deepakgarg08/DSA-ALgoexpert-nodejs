@@ -1,0 +1,6 @@
+divide the string length by total number of rows ,it will give you 2d array column length
+loop for column = to column n-1
+start with the first character
+The next character of string would be IndexOfPreviousChar +ColumnLength + 1
+if step 4 returns length value out of bound then use the next char from the first row of 2darray
+once all these steps are over replace all "_" with space and then trim the string.

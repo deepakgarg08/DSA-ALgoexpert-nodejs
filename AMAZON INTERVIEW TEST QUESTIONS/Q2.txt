@@ -1,0 +1,57 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+string ltrim(const string &);
+string rtrim(const string &);
+
+
+/*
+ * Complete the 'decodeString' function below.
+ *
+ * The function is expected to return a STRING.
+ * The function accepts following parameters:
+ *  1. INTEGER numberOfRows
+ *  2. STRING encodedString
+ */
+string trim(string s){
+    int len = s.length();
+    int i =0 ;
+    while(i<len&& s[i] == ' '){
+        i++;
+        
+    }
+    
+    while(len>i && s[len-1] ==' '){
+        len--;
+    }
+    return s.substr(i,len-i);
+}
+string decodeString(int numberOfRows, string encodedString) {
+    int length= encodedString.length();
+        int arrLength= length/numberOfRows;
+    string res= "";
+    for(int i =0;i<length;i++){
+        res+='_';
+    }
+    int k = -1;
+    int newInd = 0;
+    for(int i = 0;i<arrLength;i++){
+        res[++k]=encodedString[newInd];
+        while(newInd<=length){
+            newInd=newInd+arrLength+1;
+            if(newInd<length){
+                res[++k]=encodedString[newInd];
+            
+            }
+        }
+        newInd = i+1;
+    }
+    for(int i =0;i<length;i++){
+        if(res[i]=='_'){
+            res[i] =' ';
+        }
+    }
+    return trim(res);        
+}
+int main()

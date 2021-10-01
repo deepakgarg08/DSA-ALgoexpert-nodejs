@@ -1,0 +1,4 @@
+Initialize an empty hashmap
+iterate through every item in list and apply the next step
+check if that string is present in  hashmap then increase the counter or if not present make a new entry with initial value 1
+make an array of the required type and sort it;
