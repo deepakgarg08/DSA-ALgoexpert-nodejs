@@ -1,3 +1,4 @@
+https://github.com/deepakgarg08/algoexpert-data-structures-algorithms/blob/master/Questions/merge-overlapping-intervals.PNG
 // var array = [
 //   [5, 7],
 //   [1, 3],

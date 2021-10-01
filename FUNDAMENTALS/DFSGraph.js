@@ -10,7 +10,7 @@ const routes = [
   ["JFK", "HEL"],
   ["JFK", "LOS"],
   ["MEX", "LAX"],
-  ["MEX", "BKK"],
+  ["LAP", "BKK"],
   ["MEX", "LIM"],
   ["MEX", "EZE"],
   ["LIM", "BKK"],
@@ -58,7 +58,7 @@ function DFS(start, visited = new Set()) {
 }
 // console.log("Adj",adjList);
 // console.log("DFS::", DFS("HEL"));
-console.log("DFS::", DFS("MEX"));
+console.log("DFS::", DFS("JFK"));
 
 
 /** 

@@ -10,7 +10,7 @@ const routes = [
   ["JFK", "HEL"],
   ["JFK", "LOS"],
   ["MEX", "LAX"],
-  ["MEX", "BKK"],
+  ["LAP", "BKK"],
   ["MEX", "LIM"],
   ["MEX", "EZE"],
   ["LIM", "BKK"],
@@ -49,8 +49,10 @@ function BFS(start) {
   while (queue.length > 0) {
       const airport = queue.shift();
       const destinations = adjList.get(airport);
+      console.log('destinations', destinations)
       
     for (const destination of destinations) {
+      // console.log('destination', destination)
       if(!visited.has(destination)){
           visited.add(destination)
           queue.push(destination)
